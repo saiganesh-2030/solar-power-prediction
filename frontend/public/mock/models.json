@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "name": "physics_baseline",
+      "display_name": "Physics Baseline",
+      "description": "First-principles model: P = a * G * (1 + gamma * (T_module - 25)) with fitted temperature coefficient.",
+      "is_selected": true
+    },
+    {
+      "name": "ridge_poly",
+      "display_name": "Polynomial Ridge",
+      "description": "Standardized degree-2 polynomial expansion with L2 regularized Ridge regression.",
+      "is_selected": false
+    },
+    {
+      "name": "hist_gradient_boosting",
+      "display_name": "Histogram Gradient Boosting",
+      "description": "Fast tree boosting with strict monotonic increasing constraint on solar irradiance.",
+      "is_selected": false
+    },
+    {
+      "name": "random_forest",
+      "display_name": "Random Forest",
+      "description": "Ensemble of 100 decision trees trained with bootstrap bagging.",
+      "is_selected": false
+    }
+  ],
+  "meta": {
+    "plant": 1,
+    "model_name": "physics_baseline",
+    "source": "mock"
+  }
+}
+

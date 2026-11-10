@@ -1,0 +1,27 @@
+{
+  "data": {
+    "histogram": [
+      { "bin_start": -120.0, "bin_end": -80.0, "count": 25 },
+      { "bin_start": -80.0, "bin_end": -40.0, "count": 180 },
+      { "bin_start": -40.0, "bin_end": 0.0, "count": 620 },
+      { "bin_start": 0.0, "bin_end": 40.0, "count": 710 },
+      { "bin_start": 40.0, "bin_end": 80.0, "count": 210 },
+      { "bin_start": 80.0, "bin_end": 120.0, "count": 35 }
+    ],
+    "sample_points": [
+      { "irradiation_kw_m2": 0.15, "residual_kw": 5.2 },
+      { "irradiation_kw_m2": 0.35, "residual_kw": -12.4 },
+      { "irradiation_kw_m2": 0.65, "residual_kw": 18.0 },
+      { "irradiation_kw_m2": 0.85, "residual_kw": -8.5 },
+      { "irradiation_kw_m2": 1.05, "residual_kw": 24.1 }
+    ],
+    "mean_residual_kw": 7.88,
+    "std_residual_kw": 78.8
+  },
+  "meta": {
+    "plant": 1,
+    "split": "test",
+    "source": "mock"
+  }
+}
+

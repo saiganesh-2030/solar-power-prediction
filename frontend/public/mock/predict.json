@@ -1,0 +1,18 @@
+{
+  "data": {
+    "ac_kw_per_inverter": 680.5,
+    "interval_lo_kw": 612.45,
+    "interval_hi_kw": 748.55,
+    "interval_coverage": 0.9,
+    "plant_ac_kw_estimate": 14971.0,
+    "n_inverters": 22,
+    "model_name": "physics_baseline",
+    "warnings": []
+  },
+  "meta": {
+    "plant": 1,
+    "model_name": "physics_baseline",
+    "source": "mock"
+  }
+}
+
