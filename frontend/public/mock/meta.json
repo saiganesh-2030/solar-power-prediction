@@ -1,0 +1,44 @@
+{
+  "data": {
+    "plants": [1, 2],
+    "inverters": {
+      "1": [
+        "1BY6WEcLGh8j5v7", "1IF53ai7Xc0U56Y", "3PZuoBAID5Wc2Wu", "7JYdWkrLSPkdwr4",
+        "McdE0feGgRqW7Ca", "VHMLBKoKgIrUVDU", "WRmjgnKYAwPKfa1", "Z9ZuAdminMockInv",
+        "adLQvlD726eNQUq", "bvBOhCHSlotMcum", "pkci93gqw93kdlA", "q49slw9402lskdm",
+        "r92lskw0928dkam", "sj209slwkdm20sk", "t029slwkdms920s", "u029slwkdm029sl",
+        "v029slwkdm029sk", "w029slwkdm029sk", "x029slwkdm029sk", "y029slwkdm029sk",
+        "z029slwkdm029sk", "aa29slwkdm029sk"
+      ],
+      "2": [
+        "4UPUqMRk7TRMgP1", "81aDXdaDuBmRrfv", "Et9kgGMDfd5sMfW", "IQ2qTDRwuzAnioU",
+        "LYwnQax7tcmNvdY", "QucRAWYFrllAnqc", "RRznTwioYdqLEo0", "V9AdminMockInv2",
+        "adLQvlD726eNQU2", "bvBOhCHSlotMcu2", "pkci93gqw93kdl2", "q49slw9402lskd2",
+        "r92lskw0928dka2", "sj209slwkdm20s2", "t029slwkdms9202", "u029slwkdm029s2",
+        "v029slwkdm029s2", "w029slwkdm029s2", "x029slwkdm029s2", "y029slwkdm029s2",
+        "z029slwkdm029s2", "aa29slwkdm029s2"
+      ]
+    },
+    "date_range": {
+      "start": "2020-05-15",
+      "end": "2020-06-17"
+    },
+    "split_dates": {
+      "train": ["2020-05-15", "2020-06-07"],
+      "val": ["2020-06-08", "2020-06-12"],
+      "test": ["2020-06-13", "2020-06-17"]
+    },
+    "selected_models": {
+      "1": "hist_gradient_boosting",
+      "2": "hist_gradient_boosting"
+    },
+    "tariff_default": 4.0,
+    "data_version": "v1.0-mock",
+    "source": "stub"
+  },
+  "meta": {
+    "generated_at": "2026-11-10T08:00:00",
+    "source": "stub"
+  }
+}
+

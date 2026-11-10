@@ -1,0 +1,62 @@
+{
+  "plant_id": 1,
+  "coverage": 0.99,
+  "bins": [
+    {
+      "bin": 0,
+      "pred_min": 0,
+      "pred_max": 100,
+      "q_b": 25.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 1,
+      "pred_min": 100,
+      "pred_max": 200,
+      "q_b": 29.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 2,
+      "pred_min": 200,
+      "pred_max": 300,
+      "q_b": 33.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 3,
+      "pred_min": 300,
+      "pred_max": 400,
+      "q_b": 37.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 4,
+      "pred_min": 400,
+      "pred_max": 500,
+      "q_b": 41.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 5,
+      "pred_min": 500,
+      "pred_max": 600,
+      "q_b": 45.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 6,
+      "pred_min": 600,
+      "pred_max": 700,
+      "q_b": 49.0,
+      "mad_b": 12.0
+    },
+    {
+      "bin": 7,
+      "pred_min": 700,
+      "pred_max": 800,
+      "q_b": 53.0,
+      "mad_b": 12.0
+    }
+  ]
+}

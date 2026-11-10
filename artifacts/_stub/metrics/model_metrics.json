@@ -1,0 +1,338 @@
+{
+  "generated_at": "2026-11-10T02:29:18",
+  "seed": 42,
+  "split": {
+    "train": [
+      "2020-05-15",
+      "2020-05-24"
+    ],
+    "val": [
+      "2020-05-24",
+      "2020-05-26"
+    ],
+    "test": [
+      "2020-05-26",
+      "2020-05-28"
+    ]
+  },
+  "plants": {
+    "1": {
+      "capacity_proxy_kw": 850.0,
+      "selected_model": "hist_gradient_boosting",
+      "selection_reason": "lowest validation daylight RMSE; within 3% parsimony window",
+      "models": [
+        {
+          "name": "physics_baseline",
+          "val": {
+            "all": {
+              "mae": 32.5,
+              "rmse": 48.2,
+              "r2": 0.88
+            },
+            "daylight": {
+              "mae": 28.1,
+              "rmse": 41.3,
+              "r2": 0.89,
+              "wape": 0.082,
+              "nmae": 0.033
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 33.1,
+              "rmse": 49.0,
+              "r2": 0.87
+            },
+            "daylight": {
+              "mae": 29.0,
+              "rmse": 42.1,
+              "r2": 0.88,
+              "wape": 0.084,
+              "nmae": 0.034
+            }
+          }
+        },
+        {
+          "name": "hist_gradient_boosting",
+          "val": {
+            "all": {
+              "mae": 18.2,
+              "rmse": 27.4,
+              "r2": 0.95
+            },
+            "daylight": {
+              "mae": 15.6,
+              "rmse": 23.1,
+              "r2": 0.96,
+              "wape": 0.045,
+              "nmae": 0.018
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 19.1,
+              "rmse": 28.5,
+              "r2": 0.94
+            },
+            "daylight": {
+              "mae": 16.3,
+              "rmse": 24.2,
+              "r2": 0.95,
+              "wape": 0.047,
+              "nmae": 0.019
+            }
+          }
+        }
+      ],
+      "walk_forward": [
+        {
+          "fold": 1,
+          "train_end": "2020-05-24",
+          "test_range": [
+            "2020-05-25",
+            "2020-05-27"
+          ],
+          "model": "hist_gradient_boosting",
+          "daylight_rmse": 23.8
+        },
+        {
+          "fold": 2,
+          "train_end": "2020-05-27",
+          "test_range": [
+            "2020-05-28",
+            "2020-05-30"
+          ],
+          "model": "hist_gradient_boosting",
+          "daylight_rmse": 24.1
+        }
+      ],
+      "by_irradiation_bin": [
+        {
+          "bin": "0.05-0.2",
+          "model": "hist_gradient_boosting",
+          "mae": 8.5,
+          "n": 420
+        },
+        {
+          "bin": "0.2-0.4",
+          "model": "hist_gradient_boosting",
+          "mae": 14.2,
+          "n": 580
+        },
+        {
+          "bin": "0.4-0.6",
+          "model": "hist_gradient_boosting",
+          "mae": 18.1,
+          "n": 610
+        },
+        {
+          "bin": "0.6-0.8",
+          "model": "hist_gradient_boosting",
+          "mae": 22.4,
+          "n": 590
+        },
+        {
+          "bin": "0.8+",
+          "model": "hist_gradient_boosting",
+          "mae": 25.0,
+          "n": 450
+        }
+      ],
+      "by_day_type": [
+        {
+          "day_type": "clear",
+          "model": "hist_gradient_boosting",
+          "mae": 14.1,
+          "n": 1800
+        },
+        {
+          "day_type": "cloudy",
+          "model": "hist_gradient_boosting",
+          "mae": 22.5,
+          "n": 850
+        }
+      ],
+      "feature_importance": [
+        {
+          "feature": "irradiation_kw_m2",
+          "importance": 0.78
+        },
+        {
+          "feature": "module_temp_c",
+          "importance": 0.12
+        },
+        {
+          "feature": "ambient_temp_c",
+          "importance": 0.04
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.03
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.03
+        }
+      ]
+    },
+    "2": {
+      "capacity_proxy_kw": 850.0,
+      "selected_model": "hist_gradient_boosting",
+      "selection_reason": "lowest validation daylight RMSE; within 3% parsimony window",
+      "models": [
+        {
+          "name": "physics_baseline",
+          "val": {
+            "all": {
+              "mae": 32.5,
+              "rmse": 48.2,
+              "r2": 0.88
+            },
+            "daylight": {
+              "mae": 28.1,
+              "rmse": 41.3,
+              "r2": 0.89,
+              "wape": 0.082,
+              "nmae": 0.033
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 33.1,
+              "rmse": 49.0,
+              "r2": 0.87
+            },
+            "daylight": {
+              "mae": 29.0,
+              "rmse": 42.1,
+              "r2": 0.88,
+              "wape": 0.084,
+              "nmae": 0.034
+            }
+          }
+        },
+        {
+          "name": "hist_gradient_boosting",
+          "val": {
+            "all": {
+              "mae": 18.2,
+              "rmse": 27.4,
+              "r2": 0.95
+            },
+            "daylight": {
+              "mae": 15.6,
+              "rmse": 23.1,
+              "r2": 0.96,
+              "wape": 0.045,
+              "nmae": 0.018
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 19.1,
+              "rmse": 28.5,
+              "r2": 0.94
+            },
+            "daylight": {
+              "mae": 16.3,
+              "rmse": 24.2,
+              "r2": 0.95,
+              "wape": 0.047,
+              "nmae": 0.019
+            }
+          }
+        }
+      ],
+      "walk_forward": [
+        {
+          "fold": 1,
+          "train_end": "2020-05-24",
+          "test_range": [
+            "2020-05-25",
+            "2020-05-27"
+          ],
+          "model": "hist_gradient_boosting",
+          "daylight_rmse": 23.8
+        },
+        {
+          "fold": 2,
+          "train_end": "2020-05-27",
+          "test_range": [
+            "2020-05-28",
+            "2020-05-30"
+          ],
+          "model": "hist_gradient_boosting",
+          "daylight_rmse": 24.1
+        }
+      ],
+      "by_irradiation_bin": [
+        {
+          "bin": "0.05-0.2",
+          "model": "hist_gradient_boosting",
+          "mae": 8.5,
+          "n": 420
+        },
+        {
+          "bin": "0.2-0.4",
+          "model": "hist_gradient_boosting",
+          "mae": 14.2,
+          "n": 580
+        },
+        {
+          "bin": "0.4-0.6",
+          "model": "hist_gradient_boosting",
+          "mae": 18.1,
+          "n": 610
+        },
+        {
+          "bin": "0.6-0.8",
+          "model": "hist_gradient_boosting",
+          "mae": 22.4,
+          "n": 590
+        },
+        {
+          "bin": "0.8+",
+          "model": "hist_gradient_boosting",
+          "mae": 25.0,
+          "n": 450
+        }
+      ],
+      "by_day_type": [
+        {
+          "day_type": "clear",
+          "model": "hist_gradient_boosting",
+          "mae": 14.1,
+          "n": 1800
+        },
+        {
+          "day_type": "cloudy",
+          "model": "hist_gradient_boosting",
+          "mae": 22.5,
+          "n": 850
+        }
+      ],
+      "feature_importance": [
+        {
+          "feature": "irradiation_kw_m2",
+          "importance": 0.78
+        },
+        {
+          "feature": "module_temp_c",
+          "importance": 0.12
+        },
+        {
+          "feature": "ambient_temp_c",
+          "importance": 0.04
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.03
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.03
+        }
+      ]
+    }
+  }
+}

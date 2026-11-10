@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar Power Generation Prediction & Performance Deviation Analysis</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-title">☀️ Solar Generation & Deviation Analysis</span>
+        <span id="data-source-badge" class="brand-badge">Connecting...</span>
+      </div>
+
+      <nav class="app-nav">
+        <a href="#/" data-route="/">Dashboard</a>
+        <a href="#/prediction" data-route="/prediction">Prediction</a>
+        <a href="#/models" data-route="/models">Models</a>
+        <a href="#/anomalies" data-route="/anomalies">Anomalies</a>
+        <a href="#/weather" data-route="/weather">Weather</a>
+        <a href="#/history" data-route="/history">History</a>
+        <a href="#/finance" data-route="/finance">Finance</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn btn-secondary" aria-label="Toggle theme">
+          🌓 Theme
+        </button>
+      </div>
+    </header>
+
+    <div id="filter-bar-mount" class="filter-bar-container"></div>
+
+    <main id="app-content" class="app-main"></main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+

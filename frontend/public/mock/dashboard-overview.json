@@ -1,0 +1,88 @@
+{
+  "data": {
+    "kpis": {
+      "actual_kwh": 312500.5,
+      "predicted_kwh": 328900.2,
+      "deviation_pct": -4.98,
+      "anomaly_events": {
+        "total": 12,
+        "shortfall": 10,
+        "surplus": 2,
+        "high_severity": 3
+      },
+      "shortfall_kwh": {
+        "conservative": 6800.5,
+        "central": 16399.7,
+        "upper": 18200.0
+      },
+      "shortfall_inr": {
+        "conservative": 27202.0,
+        "central": 65598.8,
+        "upper": 72800.0
+      },
+      "tariff_inr_per_kwh": 4.0,
+      "model": {
+        "name": "hist_gradient_boosting",
+        "test_daylight_rmse_kw": 24.2,
+        "test_daylight_r2": 0.95,
+        "test_daylight_mae_kw": 16.3
+      },
+      "data_quality_score": 98.4
+    },
+    "timeseries": {
+      "t": [
+        "2020-06-13T06:00:00",
+        "2020-06-13T07:00:00",
+        "2020-06-13T08:00:00",
+        "2020-06-13T09:00:00",
+        "2020-06-13T10:00:00",
+        "2020-06-13T11:00:00",
+        "2020-06-13T12:00:00",
+        "2020-06-13T13:00:00",
+        "2020-06-13T14:00:00",
+        "2020-06-13T15:00:00",
+        "2020-06-13T16:00:00",
+        "2020-06-13T17:00:00"
+      ],
+      "actual_kw": [150.0, 480.0, 920.0, 1420.0, 1750.0, 1920.0, 1950.0, 1840.0, 1510.0, 1080.0, 520.0, 140.0],
+      "pred_kw": [160.0, 500.0, 950.0, 1480.0, 1820.0, 1980.0, 2010.0, 1910.0, 1580.0, 1120.0, 540.0, 150.0],
+      "band_lo_kw": [120.0, 420.0, 830.0, 1320.0, 1630.0, 1780.0, 1810.0, 1710.0, 1400.0, 980.0, 450.0, 110.0],
+      "band_hi_kw": [200.0, 580.0, 1070.0, 1640.0, 2010.0, 2180.0, 2210.0, 2110.0, 1760.0, 1260.0, 630.0, 190.0]
+    },
+    "event_spans": [
+      {
+        "event_id": "P1-E0001",
+        "start": "2020-06-13T10:00:00",
+        "end": "2020-06-13T11:30:00",
+        "direction": "shortfall",
+        "category": "inverter_specific"
+      }
+    ],
+    "top_candidates": [
+      {
+        "inverter_id": "1BY6WEcLGh8j5v7",
+        "events": 4,
+        "shortfall_kwh": 2850.5,
+        "mean_peer_ratio": 0.74,
+        "confidence": "high"
+      },
+      {
+        "inverter_id": "3PZuoBAID5Wc2Wu",
+        "events": 3,
+        "shortfall_kwh": 1940.2,
+        "mean_peer_ratio": 0.81,
+        "confidence": "medium"
+      }
+    ]
+  },
+  "meta": {
+    "plant": 1,
+    "start": "2020-06-13",
+    "end": "2020-06-17",
+    "split": "test",
+    "model_name": "hist_gradient_boosting",
+    "generated_at": "2026-11-10T08:00:00",
+    "source": "stub"
+  }
+}
+

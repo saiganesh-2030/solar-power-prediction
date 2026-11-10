@@ -1,0 +1,188 @@
+{
+  "info": {
+    "name": "Solar Power Prediction & Performance Deviation API",
+    "description": "Postman collection covering all endpoints defined in docs/ARCHITECTURE_AND_API.md.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Liveness Probe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Status is ok', function () { var j = pm.response.json(); pm.expect(j.status).to.eql('ok'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Meta",
+      "item": [
+        {
+          "name": "Get System Metadata",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/meta",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "meta"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Envelope has data and meta', function () { var j = pm.response.json(); pm.expect(j).to.have.property('data'); pm.expect(j).to.have.property('meta'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Dashboard Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/dashboard/overview?plant=1&split=test",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "dashboard", "overview"],
+              "query": [
+                { "key": "plant", "value": "1" },
+                { "key": "split", "value": "test" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prediction",
+      "item": [
+        {
+          "name": "Predict Expected Power",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"plant\": 1, \"timestamp\": \"2020-06-10T12:00:00\", \"irradiation_kw_m2\": 0.85, \"module_temp_c\": 52.0, \"ambient_temp_c\": 33.0, \"model\": \"selected\"}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/predict",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "predict"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Anomalies",
+      "item": [
+        {
+          "name": "List Deviation Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/anomalies?plant=1&split=test",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "anomalies"],
+              "query": [
+                { "key": "plant", "value": "1" },
+                { "key": "split", "value": "test" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Weather",
+      "item": [
+        {
+          "name": "Weather Relationships",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/weather/relationships?plant=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "weather", "relationships"],
+              "query": [{ "key": "plant", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "item": [
+        {
+          "name": "Daily Aggregations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/history/daily?plant=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "history", "daily"],
+              "query": [{ "key": "plant", "value": "1" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "item": [
+        {
+          "name": "Financial Impact",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/finance/impact?plant=1&tariff=4.0",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "finance", "impact"],
+              "query": [
+                { "key": "plant", "value": "1" },
+                { "key": "tariff", "value": "4.0" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+

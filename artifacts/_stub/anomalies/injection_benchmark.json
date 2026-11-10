@@ -1,0 +1,54 @@
+{
+  "plants": {
+    "1": {
+      "scenarios": [
+        {
+          "type": "drop_20pct_2h",
+          "n_injected": 30,
+          "recall": 0.933,
+          "precision": 0.903,
+          "median_detection_delay_min": 45
+        },
+        {
+          "type": "spike_plus_30pct_1h",
+          "n_injected": 30,
+          "recall": 0.967,
+          "precision": 0.935,
+          "median_detection_delay_min": 30
+        },
+        {
+          "type": "flatline_2h",
+          "n_injected": 30,
+          "recall": 0.9,
+          "precision": 0.871,
+          "median_detection_delay_min": 45
+        }
+      ]
+    },
+    "2": {
+      "scenarios": [
+        {
+          "type": "drop_20pct_2h",
+          "n_injected": 30,
+          "recall": 0.933,
+          "precision": 0.903,
+          "median_detection_delay_min": 45
+        },
+        {
+          "type": "spike_plus_30pct_1h",
+          "n_injected": 30,
+          "recall": 0.967,
+          "precision": 0.935,
+          "median_detection_delay_min": 30
+        },
+        {
+          "type": "flatline_2h",
+          "n_injected": 30,
+          "recall": 0.9,
+          "precision": 0.871,
+          "median_detection_delay_min": 45
+        }
+      ]
+    }
+  }
+}
