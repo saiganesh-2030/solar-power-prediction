@@ -64,7 +64,7 @@ solar-power-prediction/
 │   │   ├── predict.py, models.py  # [R1]
 │   │   ├── anomalies.py, weather.py   # [R2]
 │   │   └── history.py, finance.py     # [R3]
-│   ├── schemas/                   # one Pydantic module per router
+│   ├── schemas/                   # one Pydantic module per router; common.py (re-exports core/schemas_common.py)
 │   └── services/                  # business logic called by routers (thin routers)
 ├── frontend/
 │   ├── index.html, vite.config.js, package.json

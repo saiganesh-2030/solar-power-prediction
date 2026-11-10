@@ -13,8 +13,9 @@ Make it possible for three people to work in parallel and for the pieces to fit 
 ## 2. You own (read and write)
 
 ```
-backend/app/main.py   backend/app/core/   backend/app/routers/meta.py   backend/app/routers/dashboard.py
-backend/app/schemas/common.py   backend/app/schemas/dashboard.py   backend/app/services/dashboard_service.py
+backend/app/main.py   backend/app/core/ (config.py, data_store.py, errors.py, schemas_common.py)
+backend/app/routers/meta.py   backend/app/routers/dashboard.py
+backend/app/schemas/common.py (re-exports schemas_common.py)   backend/app/schemas/dashboard.py   backend/app/services/dashboard_service.py
 frontend/index.html  vite.config.js  package.json
 frontend/src/main.js   router.js   styles/   api/client.js   state/filters.js   components/   pages/dashboard/
 frontend/public/mock/dashboard*.json   meta.json

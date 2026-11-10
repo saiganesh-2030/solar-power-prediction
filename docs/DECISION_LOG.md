@@ -76,3 +76,21 @@
 ### D-012 — Energy shortfall tiers
 - Status: ACCEPTED
 - Decision: conservative (beyond band), central (vs prediction), upper (central plus data-quality events); surplus separate and never netted (`DATA_AND_ML_SPEC.md` section 11).
+
+### D-013 — Common schemas location and re-export
+- Status: ACCEPTED
+- Date: 2026-11-10    Proposed by: Role 4 (Platform & Integration Lead)
+- Context: `ARCHITECTURE_AND_API.md` listed `core/schemas_common.py` while `ROLE_4_PLATFORM_INTEGRATION.md` referenced `schemas/common.py`.
+- Decision: Common request/response envelopes (`GenericSuccessEnvelope`, `MetaEnvelope`, `ErrorEnvelope`, etc.) live in `backend/app/core/schemas_common.py` and are re-exported from `backend/app/schemas/common.py`.
+- Alternatives considered: Keeping them exclusively in `core/` or exclusively in `schemas/`.
+- Consequences / contracts touched: Both `backend/app/core/schemas_common.py` and `backend/app/schemas/common.py` exist and are canonical.
+- Evidence: Both core error handlers and router schemas can import envelopes cleanly without circular dependencies.
+
+### D-014 — Baseline default tariff placeholder
+- Status: ACCEPTED
+- Date: 2026-11-10    Proposed by: Role 4 (Platform & Integration Lead)
+- Context: D-009 established that tariff is a configurable assumption, but left the default placeholder value open. API contract examples in `ARCHITECTURE_AND_API.md` section 6 use 4.0.
+- Decision: `DEFAULT_TARIFF_INR_PER_KWH` is 4.0 in `ml/common/config.py` as a placeholder until Role 3 supplies a sourced value (see D-009).
+- Alternatives considered: Leaving undefined or 0.0, which breaks stub calculations on Day 0/1.
+- Consequences / contracts touched: Default tariff returned by `/meta` is 4.0 INR/kWh.
+- Evidence: Consistent with contract examples in `docs/ARCHITECTURE_AND_API.md` section 6.
