@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Solar Power Generation Prediction and Performance Deviation Analysis
 
 A web application that estimates expected solar AC power from weather and time, finds significant deviations from actual generation, explains them with evidence (without calling them equipment faults), and estimates the energy and money at stake.
@@ -72,3 +73,6 @@ Update this table as work progresses.
 | API | not started |
 | Frontend pages | not started |
 | Tests and Postman | not started |
+=======
+# solar-power-prediction
+>>>>>>> 2bb7b945191f1a3b60dabc4e5e7036982afc7b31
