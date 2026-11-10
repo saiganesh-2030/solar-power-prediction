@@ -6,7 +6,12 @@ References:
 - docs/DECISION_LOG.md (D-009, D-010)
 """
 
+import os
 from pathlib import Path
+
+# Silence joblib/loky CPU core detection warning on Windows
+if "LOKY_MAX_CPU_COUNT" not in os.environ:
+    os.environ["LOKY_MAX_CPU_COUNT"] = "4"
 
 # Paths
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent.parent

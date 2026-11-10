@@ -1,0 +1,864 @@
+{
+  "generated_at": "2026-11-10T17:06:45",
+  "seed": 42,
+  "split": {
+    "train": [
+      "2020-05-15",
+      "2020-06-06"
+    ],
+    "val": [
+      "2020-06-07",
+      "2020-06-11"
+    ],
+    "test": [
+      "2020-06-12",
+      "2020-06-17"
+    ]
+  },
+  "plants": {
+    "1": {
+      "capacity_proxy_kw": 1283.12,
+      "selected_model": "physics_baseline",
+      "selection_reason": "physics_baseline is within 3% of best (111.97 kW vs 110.19 kW); simpler model preferred per spec section 6",
+      "models": [
+        {
+          "name": "physics_baseline",
+          "val": {
+            "all": {
+              "mae": 22.79,
+              "rmse": 77.52,
+              "r2": 0.9607
+            },
+            "daylight": {
+              "mae": 47.05,
+              "rmse": 111.97,
+              "r2": 0.8937,
+              "wape": 0.0755,
+              "nmae": 0.0367
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 17.91,
+              "rmse": 54.24,
+              "r2": 0.9783
+            },
+            "daylight": {
+              "mae": 34.16,
+              "rmse": 53.96,
+              "r2": 0.9717,
+              "wape": 0.0574,
+              "nmae": 0.0266
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 350.49,
+                "rmse": 846.32,
+                "r2": 0.99
+              },
+              "daylight": {
+                "mae": 720.48,
+                "rmse": 1221.91,
+                "r2": 0.9716,
+                "wape": 0.0525,
+                "nmae": 0.0255
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 254.93,
+                "rmse": 539.88,
+                "r2": 0.9955
+              },
+              "daylight": {
+                "mae": 500.51,
+                "rmse": 687.39,
+                "r2": 0.9901,
+                "wape": 0.0391,
+                "nmae": 0.0177
+              }
+            }
+          }
+        },
+        {
+          "name": "ridge_poly",
+          "val": {
+            "all": {
+              "mae": 21.13,
+              "rmse": 76.63,
+              "r2": 0.9616
+            },
+            "daylight": {
+              "mae": 43.44,
+              "rmse": 110.68,
+              "r2": 0.8962,
+              "wape": 0.0697,
+              "nmae": 0.0339
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 15.5,
+              "rmse": 52.67,
+              "r2": 0.9795
+            },
+            "daylight": {
+              "mae": 28.86,
+              "rmse": 49.82,
+              "r2": 0.9758,
+              "wape": 0.0485,
+              "nmae": 0.0225
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 303.51,
+                "rmse": 806.07,
+                "r2": 0.9909
+              },
+              "daylight": {
+                "mae": 619.24,
+                "rmse": 1163.4,
+                "r2": 0.9742,
+                "wape": 0.0451,
+                "nmae": 0.0219
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 210.36,
+                "rmse": 458.34,
+                "r2": 0.9967
+              },
+              "daylight": {
+                "mae": 380.5,
+                "rmse": 567.52,
+                "r2": 0.9933,
+                "wape": 0.0297,
+                "nmae": 0.0135
+              }
+            }
+          }
+        },
+        {
+          "name": "hist_gradient_boosting",
+          "val": {
+            "all": {
+              "mae": 21.67,
+              "rmse": 76.29,
+              "r2": 0.9619
+            },
+            "daylight": {
+              "mae": 44.8,
+              "rmse": 110.19,
+              "r2": 0.8971,
+              "wape": 0.0719,
+              "nmae": 0.0349
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 16.66,
+              "rmse": 53.38,
+              "r2": 0.9789
+            },
+            "daylight": {
+              "mae": 31.57,
+              "rmse": 52.92,
+              "r2": 0.9727,
+              "wape": 0.053,
+              "nmae": 0.0246
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 315.96,
+                "rmse": 790.16,
+                "r2": 0.9913
+              },
+              "daylight": {
+                "mae": 650.69,
+                "rmse": 1140.86,
+                "r2": 0.9752,
+                "wape": 0.0474,
+                "nmae": 0.0231
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 230.0,
+                "rmse": 496.42,
+                "r2": 0.9962
+              },
+              "daylight": {
+                "mae": 441.94,
+                "rmse": 654.43,
+                "r2": 0.9911,
+                "wape": 0.0345,
+                "nmae": 0.0157
+              }
+            }
+          }
+        },
+        {
+          "name": "random_forest",
+          "val": {
+            "all": {
+              "mae": 22.61,
+              "rmse": 76.82,
+              "r2": 0.9614
+            },
+            "daylight": {
+              "mae": 46.71,
+              "rmse": 110.96,
+              "r2": 0.8956,
+              "wape": 0.0749,
+              "nmae": 0.0364
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 17.63,
+              "rmse": 53.9,
+              "r2": 0.9785
+            },
+            "daylight": {
+              "mae": 33.71,
+              "rmse": 54.96,
+              "r2": 0.9706,
+              "wape": 0.0566,
+              "nmae": 0.0263
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 338.51,
+                "rmse": 814.94,
+                "r2": 0.9907
+              },
+              "daylight": {
+                "mae": 696.67,
+                "rmse": 1176.51,
+                "r2": 0.9736,
+                "wape": 0.0508,
+                "nmae": 0.0247
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 246.06,
+                "rmse": 522.94,
+                "r2": 0.9958
+              },
+              "daylight": {
+                "mae": 495.95,
+                "rmse": 730.62,
+                "r2": 0.9889,
+                "wape": 0.0387,
+                "nmae": 0.0176
+              }
+            }
+          }
+        }
+      ],
+      "plant_level": {
+        "val": {
+          "all": {
+            "mae": 350.49,
+            "rmse": 846.32,
+            "r2": 0.99
+          },
+          "daylight": {
+            "mae": 720.48,
+            "rmse": 1221.91,
+            "r2": 0.9716,
+            "wape": 0.0525,
+            "nmae": 0.0255
+          }
+        },
+        "test": {
+          "all": {
+            "mae": 254.93,
+            "rmse": 539.88,
+            "r2": 0.9955
+          },
+          "daylight": {
+            "mae": 500.51,
+            "rmse": 687.39,
+            "r2": 0.9901,
+            "wape": 0.0391,
+            "nmae": 0.0177
+          }
+        }
+      },
+      "walk_forward": [
+        {
+          "fold": 1,
+          "train_end": "2020-05-26",
+          "test_range": [
+            "2020-05-27",
+            "2020-05-29"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 63.58
+        },
+        {
+          "fold": 2,
+          "train_end": "2020-05-29",
+          "test_range": [
+            "2020-05-30",
+            "2020-06-01"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 82.79
+        },
+        {
+          "fold": 3,
+          "train_end": "2020-06-01",
+          "test_range": [
+            "2020-06-02",
+            "2020-06-04"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 55.89
+        }
+      ],
+      "by_irradiation_bin": [
+        {
+          "bin": "0.05-0.2",
+          "model": "physics_baseline",
+          "mae": 8.36,
+          "n": 1342
+        },
+        {
+          "bin": "0.2-0.4",
+          "model": "physics_baseline",
+          "mae": 22.18,
+          "n": 1188
+        },
+        {
+          "bin": "0.4-0.6",
+          "model": "physics_baseline",
+          "mae": 39.37,
+          "n": 1968
+        },
+        {
+          "bin": "0.6-0.8",
+          "model": "physics_baseline",
+          "mae": 62.14,
+          "n": 916
+        },
+        {
+          "bin": "0.8+",
+          "model": "physics_baseline",
+          "mae": 61.11,
+          "n": 480
+        }
+      ],
+      "by_day_type": [
+        {
+          "day_type": "clear",
+          "model": "physics_baseline",
+          "mae": 50.87,
+          "n": 990
+        },
+        {
+          "day_type": "mixed",
+          "model": "physics_baseline",
+          "mae": 33.55,
+          "n": 2924
+        },
+        {
+          "day_type": "cloudy",
+          "model": "physics_baseline",
+          "mae": 26.7,
+          "n": 1980
+        }
+      ],
+      "feature_importance": [
+        {
+          "feature": "irradiation_kw_m2",
+          "importance": 0.9644,
+          "explanation": "Direct solar irradiance driving photovoltaic electron generation; primary physical power source."
+        },
+        {
+          "feature": "module_temp_c",
+          "importance": 0.0356,
+          "explanation": "PV panel surface temperature; higher temperature induces negative thermal voltage drop."
+        },
+        {
+          "feature": "ambient_temp_c",
+          "importance": 0.0,
+          "explanation": "Surrounding air temperature; determines convective panel cooling efficiency."
+        },
+        {
+          "feature": "temp_delta_c",
+          "importance": 0.0,
+          "explanation": "Difference between module and ambient temperature; proxy for solar heat absorption and wind cooling."
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.0,
+          "explanation": "Cyclical sine of time of day; encodes diurnal solar elevation angle smoothly."
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.0,
+          "explanation": "Cyclical cosine of time of day; distinguishes morning ramp-up from afternoon ramp-down."
+        },
+        {
+          "feature": "irr_lag1",
+          "importance": 0.0,
+          "explanation": "Solar irradiance in previous 15-minute interval; captures short-term persistent cloud cover."
+        },
+        {
+          "feature": "irr_diff1",
+          "importance": 0.0,
+          "explanation": "Rate of change in irradiance; captures transient cloud shadows and rapid weather shifts."
+        },
+        {
+          "feature": "irr_roll_mean_4",
+          "importance": 0.0,
+          "explanation": "1-hour trailing average irradiance; represents steady-state solar regime."
+        },
+        {
+          "feature": "irr_roll_std_4",
+          "importance": 0.0,
+          "explanation": "1-hour trailing irradiance volatility; measures cloud intermittency and variability."
+        },
+        {
+          "feature": "irr_x_modtemp",
+          "importance": 0.0,
+          "explanation": "Interaction between irradiance and module temperature; captures irradiance-dependent thermal loss."
+        }
+      ]
+    },
+    "2": {
+      "capacity_proxy_kw": 1276.7,
+      "selected_model": "physics_baseline",
+      "selection_reason": "lowest validation daylight RMSE (207.15 kW)",
+      "models": [
+        {
+          "name": "physics_baseline",
+          "val": {
+            "all": {
+              "mae": 96.18,
+              "rmse": 274.99,
+              "r2": 0.3432
+            },
+            "daylight": {
+              "mae": 96.87,
+              "rmse": 207.15,
+              "r2": 0.638,
+              "wape": 0.1851,
+              "nmae": 0.0759
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 60.63,
+              "rmse": 190.92,
+              "r2": 0.5626
+            },
+            "daylight": {
+              "mae": 84.66,
+              "rmse": 185.6,
+              "r2": 0.5425,
+              "wape": 0.1877,
+              "nmae": 0.0663
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 1826.93,
+                "rmse": 4209.43,
+                "r2": 0.519
+              },
+              "daylight": {
+                "mae": 1084.67,
+                "rmse": 2394.6,
+                "r2": 0.7643,
+                "wape": 0.1258,
+                "nmae": 0.0386
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 1152.07,
+                "rmse": 2915.69,
+                "r2": 0.7275
+              },
+              "daylight": {
+                "mae": 1370.1,
+                "rmse": 3040.61,
+                "r2": 0.572,
+                "wape": 0.1558,
+                "nmae": 0.0488
+              }
+            }
+          }
+        },
+        {
+          "name": "ridge_poly",
+          "val": {
+            "all": {
+              "mae": 93.86,
+              "rmse": 272.54,
+              "r2": 0.3548
+            },
+            "daylight": {
+              "mae": 91.67,
+              "rmse": 207.71,
+              "r2": 0.636,
+              "wape": 0.1752,
+              "nmae": 0.0718
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 59.96,
+              "rmse": 190.78,
+              "r2": 0.5633
+            },
+            "daylight": {
+              "mae": 81.3,
+              "rmse": 186.07,
+              "r2": 0.5402,
+              "wape": 0.1803,
+              "nmae": 0.0637
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 1764.4,
+                "rmse": 4131.69,
+                "r2": 0.5366
+              },
+              "daylight": {
+                "mae": 921.26,
+                "rmse": 2472.28,
+                "r2": 0.7487,
+                "wape": 0.1068,
+                "nmae": 0.0328
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 1132.96,
+                "rmse": 2911.35,
+                "r2": 0.7283
+              },
+              "daylight": {
+                "mae": 1254.94,
+                "rmse": 3045.67,
+                "r2": 0.5705,
+                "wape": 0.1427,
+                "nmae": 0.0447
+              }
+            }
+          }
+        },
+        {
+          "name": "hist_gradient_boosting",
+          "val": {
+            "all": {
+              "mae": 95.09,
+              "rmse": 276.9,
+              "r2": 0.334
+            },
+            "daylight": {
+              "mae": 93.46,
+              "rmse": 210.66,
+              "r2": 0.6256,
+              "wape": 0.1786,
+              "nmae": 0.0732
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 59.53,
+              "rmse": 189.47,
+              "r2": 0.5692
+            },
+            "daylight": {
+              "mae": 81.92,
+              "rmse": 180.6,
+              "r2": 0.5668,
+              "wape": 0.1817,
+              "nmae": 0.0642
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 1809.44,
+                "rmse": 4269.56,
+                "r2": 0.5052
+              },
+              "daylight": {
+                "mae": 946.8,
+                "rmse": 2444.08,
+                "r2": 0.7544,
+                "wape": 0.1098,
+                "nmae": 0.0337
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 1101.37,
+                "rmse": 2869.65,
+                "r2": 0.736
+              },
+              "daylight": {
+                "mae": 1236.88,
+                "rmse": 2840.15,
+                "r2": 0.6265,
+                "wape": 0.1407,
+                "nmae": 0.044
+              }
+            }
+          }
+        },
+        {
+          "name": "random_forest",
+          "val": {
+            "all": {
+              "mae": 95.04,
+              "rmse": 276.39,
+              "r2": 0.3364
+            },
+            "daylight": {
+              "mae": 93.67,
+              "rmse": 210.25,
+              "r2": 0.6271,
+              "wape": 0.179,
+              "nmae": 0.0734
+            }
+          },
+          "test": {
+            "all": {
+              "mae": 59.33,
+              "rmse": 191.82,
+              "r2": 0.5585
+            },
+            "daylight": {
+              "mae": 81.23,
+              "rmse": 185.45,
+              "r2": 0.5433,
+              "wape": 0.1801,
+              "nmae": 0.0636
+            }
+          },
+          "plant_level": {
+            "val": {
+              "all": {
+                "mae": 1799.96,
+                "rmse": 4253.7,
+                "r2": 0.5089
+              },
+              "daylight": {
+                "mae": 951.42,
+                "rmse": 2484.22,
+                "r2": 0.7463,
+                "wape": 0.1103,
+                "nmae": 0.0339
+              }
+            },
+            "test": {
+              "all": {
+                "mae": 1109.43,
+                "rmse": 2944.12,
+                "r2": 0.7221
+              },
+              "daylight": {
+                "mae": 1218.13,
+                "rmse": 3004.58,
+                "r2": 0.582,
+                "wape": 0.1386,
+                "nmae": 0.0434
+              }
+            }
+          }
+        }
+      ],
+      "plant_level": {
+        "val": {
+          "all": {
+            "mae": 1826.93,
+            "rmse": 4209.43,
+            "r2": 0.519
+          },
+          "daylight": {
+            "mae": 1084.67,
+            "rmse": 2394.6,
+            "r2": 0.7643,
+            "wape": 0.1258,
+            "nmae": 0.0386
+          }
+        },
+        "test": {
+          "all": {
+            "mae": 1152.07,
+            "rmse": 2915.69,
+            "r2": 0.7275
+          },
+          "daylight": {
+            "mae": 1370.1,
+            "rmse": 3040.61,
+            "r2": 0.572,
+            "wape": 0.1558,
+            "nmae": 0.0488
+          }
+        }
+      },
+      "walk_forward": [
+        {
+          "fold": 1,
+          "train_end": "2020-05-26",
+          "test_range": [
+            "2020-05-27",
+            "2020-05-29"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 162.59
+        },
+        {
+          "fold": 2,
+          "train_end": "2020-05-29",
+          "test_range": [
+            "2020-05-30",
+            "2020-06-01"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 196.23
+        },
+        {
+          "fold": 3,
+          "train_end": "2020-06-01",
+          "test_range": [
+            "2020-06-02",
+            "2020-06-04"
+          ],
+          "model": "physics_baseline",
+          "daylight_rmse": 285.19
+        }
+      ],
+      "by_irradiation_bin": [
+        {
+          "bin": "0.05-0.2",
+          "model": "physics_baseline",
+          "mae": 15.03,
+          "n": 1716
+        },
+        {
+          "bin": "0.2-0.4",
+          "model": "physics_baseline",
+          "mae": 56.39,
+          "n": 1840
+        },
+        {
+          "bin": "0.4-0.6",
+          "model": "physics_baseline",
+          "mae": 135.23,
+          "n": 1466
+        },
+        {
+          "bin": "0.6-0.8",
+          "model": "physics_baseline",
+          "mae": 242.39,
+          "n": 498
+        },
+        {
+          "bin": "0.8+",
+          "model": "physics_baseline",
+          "mae": 199.41,
+          "n": 164
+        }
+      ],
+      "by_day_type": [
+        {
+          "day_type": "clear",
+          "model": "physics_baseline",
+          "mae": 0.0,
+          "n": 0
+        },
+        {
+          "day_type": "mixed",
+          "model": "physics_baseline",
+          "mae": 0.0,
+          "n": 0
+        },
+        {
+          "day_type": "cloudy",
+          "model": "physics_baseline",
+          "mae": 84.66,
+          "n": 5684
+        }
+      ],
+      "feature_importance": [
+        {
+          "feature": "irradiation_kw_m2",
+          "importance": 0.9729,
+          "explanation": "Direct solar irradiance driving photovoltaic electron generation; primary physical power source."
+        },
+        {
+          "feature": "module_temp_c",
+          "importance": 0.0271,
+          "explanation": "PV panel surface temperature; higher temperature induces negative thermal voltage drop."
+        },
+        {
+          "feature": "ambient_temp_c",
+          "importance": 0.0,
+          "explanation": "Surrounding air temperature; determines convective panel cooling efficiency."
+        },
+        {
+          "feature": "temp_delta_c",
+          "importance": 0.0,
+          "explanation": "Difference between module and ambient temperature; proxy for solar heat absorption and wind cooling."
+        },
+        {
+          "feature": "hour_sin",
+          "importance": 0.0,
+          "explanation": "Cyclical sine of time of day; encodes diurnal solar elevation angle smoothly."
+        },
+        {
+          "feature": "hour_cos",
+          "importance": 0.0,
+          "explanation": "Cyclical cosine of time of day; distinguishes morning ramp-up from afternoon ramp-down."
+        },
+        {
+          "feature": "irr_lag1",
+          "importance": 0.0,
+          "explanation": "Solar irradiance in previous 15-minute interval; captures short-term persistent cloud cover."
+        },
+        {
+          "feature": "irr_diff1",
+          "importance": 0.0,
+          "explanation": "Rate of change in irradiance; captures transient cloud shadows and rapid weather shifts."
+        },
+        {
+          "feature": "irr_roll_mean_4",
+          "importance": 0.0,
+          "explanation": "1-hour trailing average irradiance; represents steady-state solar regime."
+        },
+        {
+          "feature": "irr_roll_std_4",
+          "importance": 0.0,
+          "explanation": "1-hour trailing irradiance volatility; measures cloud intermittency and variability."
+        },
+        {
+          "feature": "irr_x_modtemp",
+          "importance": 0.0,
+          "explanation": "Interaction between irradiance and module temperature; captures irradiance-dependent thermal loss."
+        }
+      ]
+    }
+  }
+}

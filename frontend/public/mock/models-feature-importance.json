@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "feature": "irradiation_kw_m2",
+      "importance": 0.9644,
+      "explanation": "Direct solar irradiance driving photovoltaic electron generation; primary physical power source."
+    },
+    {
+      "feature": "module_temp_c",
+      "importance": 0.0356,
+      "explanation": "PV panel surface temperature; higher temperature induces negative thermal voltage drop."
+    },
+    {
+      "feature": "ambient_temp_c",
+      "importance": 0.0,
+      "explanation": "Surrounding air temperature; determines convective panel cooling efficiency."
+    },
+    {
+      "feature": "temp_delta_c",
+      "importance": 0.0,
+      "explanation": "Difference between module and ambient temperature; proxy for solar heat absorption and wind cooling."
+    },
+    {
+      "feature": "hour_sin",
+      "importance": 0.0,
+      "explanation": "Cyclical sine of time of day; encodes diurnal solar elevation angle smoothly."
+    },
+    {
+      "feature": "hour_cos",
+      "importance": 0.0,
+      "explanation": "Cyclical cosine of time of day; distinguishes morning ramp-up from afternoon ramp-down."
+    }
+  ],
+  "meta": {
+    "plant": 1,
+    "model_name": "physics_baseline",
+    "source": "mock"
+  }
+}

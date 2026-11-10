@@ -94,3 +94,12 @@
 - Alternatives considered: Leaving undefined or 0.0, which breaks stub calculations on Day 0/1.
 - Consequences / contracts touched: Default tariff returned by `/meta` is 4.0 INR/kWh.
 - Evidence: Consistent with contract examples in `docs/ARCHITECTURE_AND_API.md` section 6.
+
+### D-015 — Robust training with peer ratio filtering
+- Status: ACCEPTED
+- Date: 2026-11-10    Proposed by: Role 1 (ML Engineer)
+- Context: `DATA_AND_ML_SPEC.md` section 7 defined an initial robust training filter: drop training rows where an inverter's peer ratio (`inverter_ac / fleet_median_ac`) is below 0.70 or above 1.30 when fleet median is at least 5% capacity proxy. We compared models with robust training ON and OFF to decide whether to adopt it in production.
+- Decision: Adopt robust training ON for all production models in `ml/pipeline/train.py`.
+- Alternatives considered: Robust training OFF (using all clean training rows without peer ratio filtering).
+- Consequences / contracts touched: Preserves fleet-normal regression target by filtering out chronically underperforming inverters during training; documented in `notebooks/01_eda.ipynb` and `artifacts/metrics/robust_training_comparison.csv`.
+- Evidence: On Plant 1, robust filtering drops 124 outlier rows (0.5%) with negligible difference in validation RMSE (111.97 kW vs 111.97 kW). On Plant 2, robust filtering drops 972 outlier rows (4.7%) from persistently underperforming inverters; this prevents downward bias of fleet-normal expectations and significantly improves out-of-sample daylight MAE on the unseen test block across all models (Physics Baseline MAE drops from 92.48 kW to 84.66 kW, an 8.5% improvement; Polynomial Ridge MAE drops from 100.67 kW to 81.30 kW, a 19.2% improvement; Hist Gradient Boosting MAE drops from 93.69 kW to 81.92 kW, a 12.6% improvement).

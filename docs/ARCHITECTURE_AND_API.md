@@ -169,18 +169,32 @@ Rows exist for every merged row (all splits). In `train`, predictions are in-sam
         {
           "name": "physics_baseline",
           "val":  {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}},
-          "test": {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}}
+          "test": {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}},
+          "plant_level": {
+            "val":  {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}},
+            "test": {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}}
+          }
         }
       ],
+      "plant_level": {
+        "val":  {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}},
+        "test": {"all": {"mae": 0, "rmse": 0, "r2": 0}, "daylight": {"mae": 0, "rmse": 0, "r2": 0, "wape": 0, "nmae": 0}}
+      },
       "walk_forward": [{"fold": 1, "train_end": "2020-05-29", "test_range": ["2020-05-30", "2020-06-01"], "model": "...", "daylight_rmse": 0}],
       "by_irradiation_bin": [{"bin": "0.05-0.2", "model": "...", "mae": 0, "n": 0}],
       "by_day_type": [{"day_type": "clear", "model": "...", "mae": 0, "n": 0}],
-      "feature_importance": [{"feature": "irradiation_kw_m2", "importance": 0.0}]
+      "feature_importance": [
+        {
+          "feature": "irradiation_kw_m2",
+          "importance": 0.0,
+          "explanation": "Direct solar irradiance driving photovoltaic electron generation; primary physical power source."
+        }
+      ]
     }
   }
 }
 ```
-Zeros above are placeholders for the shape only. The real file contains real computed values. Split dates must be recomputed from the data (section 6 of `DATA_AND_ML_SPEC.md`), the dates above are illustrative.
+Zeros above are placeholders for the shape only. The real file contains real computed values. Split dates must be recomputed from the data (section 6 of `DATA_AND_ML_SPEC.md`), the dates above are illustrative. Note: `plant_level` (sum over inverters at timestamps where >= 90% inverters have valid readings) and `explanation` (plain-language explanation string in `feature_importance`) are additive non-breaking fields.
 
 ### 3.6 `artifacts/anomalies/injection_benchmark.json` (producer: Role 2)
 
